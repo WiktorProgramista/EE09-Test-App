@@ -97,9 +97,7 @@ class _OneQuestionPageState extends State<OneQuestionPage> {
     return SafeArea(
       child: Scaffold(
         body: isDataLoaded
-            ? Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.center,
+            ? ListView(
                 children: [
                   renderQuestionContent(),
                   renderAnswerButtons(),
