@@ -97,11 +97,11 @@ class _OneQuestionPageState extends State<OneQuestionPage> {
     return SafeArea(
       child: Scaffold(
         body: isDataLoaded
-            ? ListView(
+            ? Column(
                 children: [
-                  renderQuestionContent(),
-                  renderAnswerButtons(),
-                  nextQuestion(),
+                  Expanded(child: renderQuestionContent()),
+                  SingleChildScrollView(child: renderAnswerButtons()),
+                  SingleChildScrollView(child: nextQuestion()),
                 ],
               )
             : const Center(child: CircularProgressIndicator()),
@@ -163,14 +163,18 @@ class _OneQuestionPageState extends State<OneQuestionPage> {
   }
 
   Widget nextQuestion() {
-    return ElevatedButton(
-      onPressed: () {
-        loadNextQuestion();
-      },
-      style: ElevatedButton.styleFrom(backgroundColor: Colors.blue.shade900),
-      child: const Padding(
-        padding: EdgeInsets.all(3.0),
-        child: Text("Następne pytanie", style: TextStyle(color: Colors.white)),
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: ElevatedButton(
+        onPressed: () {
+          loadNextQuestion();
+        },
+        style: ElevatedButton.styleFrom(backgroundColor: Colors.blue.shade900),
+        child: const Padding(
+          padding: EdgeInsets.all(5.0),
+          child:
+              Text("Następne pytanie", style: TextStyle(color: Colors.white)),
+        ),
       ),
     );
   }
