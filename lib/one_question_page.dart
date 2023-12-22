@@ -99,9 +99,9 @@ class _OneQuestionPageState extends State<OneQuestionPage> {
         body: isDataLoaded
             ? ListView(
                 children: [
-                  Expanded(child: renderQuestionContent()),
-                  SingleChildScrollView(child: renderAnswerButtons()),
-                  SingleChildScrollView(child: nextQuestion()),
+                  renderQuestionContent(),
+                  renderAnswerButtons(),
+                  nextQuestion(),
                 ],
               )
             : const Center(child: CircularProgressIndicator()),
