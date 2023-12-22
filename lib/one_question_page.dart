@@ -97,7 +97,7 @@ class _OneQuestionPageState extends State<OneQuestionPage> {
     return SafeArea(
       child: Scaffold(
         body: isDataLoaded
-            ? Column(
+            ? ListView(
                 children: [
                   Expanded(child: renderQuestionContent()),
                   SingleChildScrollView(child: renderAnswerButtons()),
