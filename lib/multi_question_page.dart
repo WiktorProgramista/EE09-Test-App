@@ -193,7 +193,7 @@ class _MultiQuestionPageState extends State<MultiQuestionPage> {
                         (e) => e.text == currentQuestions[i].answerCorrect)
                     .btnColor = Colors.green;
               } else {
-                currentQuestions[i].answers.forEach((element) {
+                for (var element in currentQuestions[i].answers) {
                   if (element.text == currentQuestions[i].selectedAnswer) {
                     element.btnColor = Colors.red;
                   }
@@ -202,7 +202,7 @@ class _MultiQuestionPageState extends State<MultiQuestionPage> {
                       .firstWhere(
                           (e) => e.text == currentQuestions[i].answerCorrect)
                       .btnColor = Colors.green;
-                });
+                }
               }
             }
           });
